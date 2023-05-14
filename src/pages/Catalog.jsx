@@ -12,14 +12,13 @@ function Catalog(props) {
       .then(data => setUnits(data.units))
       .catch(error => console.error(error));
   }, []);
-
   const unitList = units.map(unit => (
     <div
       className={styles.card}
       style={{ background: `${unit.cover}`, backgroundSize: 'cover', backgroundColor: 'red' }}
       key={unit.id}
     >
-      <Link className={styles.link} to={`/registr/${unit.id}`}>
+      <Link className={styles.link} to={`/unit/${unit.id}`}>
         <div>
           <h2 className={styles.h2}>{unit.title}</h2>
           <p>{unit.text}</p>

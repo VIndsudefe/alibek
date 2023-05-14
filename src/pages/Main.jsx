@@ -12,7 +12,6 @@ function Main() {
       .then(data => setCards(data))
       .catch(error => console.error(error));
   }, []);
-  console.log(cards)
 
   const cardList = cards.map(card => (
     <div

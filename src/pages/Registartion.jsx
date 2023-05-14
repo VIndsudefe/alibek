@@ -7,7 +7,6 @@ function Registration() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  console.log(data)
   useEffect(() => {
     fetch(`https://math-course-p926y4f5x-baiel1922.vercel.app/course/topic/${id}`)
       .then(response => response.json())

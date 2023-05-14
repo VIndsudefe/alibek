@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Quiz.module.css';
+import { useLocation } from 'react-router-dom';
 
 const questions = [
   {
@@ -94,26 +95,48 @@ function Quiz() {
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-
+  const location = useLocation()
+  const [num,setNum]= useState(0)
+  const [choosen,setChoosen]=useState([])
   const handleAnswerOptionClick = (answer) => {
     setSelectedAnswer(answer);
   };
+  useEffect(()=>{
+    setCurrentQuestion(Math.floor(Math.random()*14))
+  },[location])
 
   const handleNextQuestionClick = () => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
-
+  
     setSelectedAnswer('');
-    if (currentQuestion + 1 < questions.length) {
-      setCurrentQuestion(currentQuestion + 1);
+    if (num < 5) {
+      setNum(prev=>{
+        setChoosen(chos=>[...chos,prev])
+        return prev+1
+      })
+      let currentRandom = Math.floor(Math.random() * 13) + 1;
+      if(currentRandom !== currentQuestion || choosen.includes(num)) {
+        if(choosen.includes(num) || currentRandom !== currentQuestion){
+          currentRandom = Math.floor(Math.random() * 13) + 1;
+          setCurrentQuestion(currentRandom);
+          return
+          }else {
+          currentRandom = Math.floor(Math.random() * 13) + 1;
+          setCurrentQuestion(currentRandom);
+          return
+        }
+      }else{
+        setCurrentQuestion(currentRandom);
+      }
     } else {
       setShowResult(true);
     }
   };
 
   const handleRestartQuizClick = () => {
-    setCurrentQuestion(0);
+    setNum(0)
     setSelectedAnswer('');
     setScore(0);
     setShowResult(false);
@@ -124,7 +147,7 @@ function Quiz() {
       {showResult ? (
         <div className={styles.result}>
           <h2>Результаты теста</h2>
-          <p>Вы ответили правильно на {score} из {questions.length} вопросов</p>
+          <p>Вы ответили правильно на {score} из 5 вопросов</p>
           <button onClick={handleRestartQuizClick}>Начать заново</button>
         </div>
       ) : (
