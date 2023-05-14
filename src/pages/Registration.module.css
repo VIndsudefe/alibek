@@ -1,0 +1,31 @@
+.registrationContainer {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionHeading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.listItem {
+  margin-bottom: 5px;
+}
+
+  
