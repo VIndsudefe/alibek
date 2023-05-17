@@ -1,0 +1,22 @@
+.unitId {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .link {
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  
+  .text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  

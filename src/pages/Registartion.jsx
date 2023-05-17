@@ -37,11 +37,14 @@ function Registration() {
           {data.examples?.map((item, i) => (
             <li className={styles.listItem} key={item.id}>
               {item.text}
-              {item.example_photos?.map(photo=>{
-                return(
-                  <img src={photo.photo} key={photo.id} alt="" />
-                )
-              })}
+              <li>
+                <h3 className={styles.sectionHeading}>Ilustration</h3>
+                {item.example_photos?.map(photo=>{
+                  return(
+                    <img src={photo.photo} key={photo.id} alt="" />
+                  )
+                })}
+              </li>
             </li>
             
           ))}

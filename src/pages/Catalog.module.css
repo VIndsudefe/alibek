@@ -25,44 +25,48 @@
     width: 50%;
 
 }
-.rightPart{
-    margin-top:100px;
+.rightPart {
+    margin-top: 100px;
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     column-gap: 10px;
-
-}
-
-.card{
-    height: 136px;
+  }
+  
+  .card {
+    height: 300px;
     width: 222px;
     padding-left: 35px;
-    padding-left: 12px;
+    padding-right: 12px;
     color: #fff;
-    background-size: cover ;
-    background-color: red;
+    background: linear-gradient(180deg, #2A4377 0%, #FFFFFF 100%);
     border-radius: 20px;
-}
-
-.tex1{
+  }
+  
+  .text1 {
     font-style: normal;
-font-weight: 700;
-font-size: 64px;
-line-height: 80px;
-/* identical to box height */
-
-
-color: #2A4377;
-margin-top: 90px;
-}
-.description{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 80px;
+    color: #2A4377;
+    margin-top: 90px;
+  }
+  
+  .description {
     font-style: normal;
     font-weight: 700;
     font-size: 23.9673px;
     line-height: 30px;
     font-family: sans-serif;
-}
+  }
+  
+  
+  
+  .link {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  
 
 .math{
     font-style: normal;
